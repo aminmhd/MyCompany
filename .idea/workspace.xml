@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="" />
+    <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/notification/notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/notification/notification.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +17,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -118,6 +125,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1eMCRxEtRNNO0ykt0m7w19Zixae" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/modal" />
@@ -133,16 +141,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\company\resources\views\panel" />
+      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\company\public\modal" />
       <recent name="C:\wamp64\www\company\public\js" />
       <recent name="C:\wamp64\www\company\public" />
       <recent name="C:\wamp64\www\company\public\build\images" />
       <recent name="C:\wamp64\www\company\public\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\company\resources\views\panel" />
-      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -181,11 +189,25 @@
       <workItem from="1594710797861" duration="8405000" />
       <workItem from="1594721941690" duration="82000" />
       <workItem from="1594722044850" duration="899000" />
-      <workItem from="1594723211807" duration="14256000" />
+      <workItem from="1594723211807" duration="15089000" />
+      <workItem from="1594815541800" duration="6523000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
