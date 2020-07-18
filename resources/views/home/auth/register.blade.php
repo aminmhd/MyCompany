@@ -2,16 +2,17 @@
 
     <div id="register" class="animate form registration_form">
         <section class="login_content">
-            <form method="post" action="">
+            <form method="post" action="{{ Route('app.home.register') }}">
+                @csrf
                 <h1>Create Account</h1>
                 <div>
-                    <input type="text" class="form-control" placeholder="Username" required=""/>
+                    <input name="user_name" type="text" class="form-control" placeholder="Name" required="required"/>
                 </div>
                 <div>
-                    <input type="email" class="form-control" placeholder="Email" required=""/>
+                    <input name="user_email" type="email" class="form-control" placeholder="Email" required="required"/>
                 </div>
                 <div>
-                    <input type="password" class="form-control" placeholder="Password" required=""/>
+                    <input name="user_password" type="password" class="form-control" placeholder="Password" required="required"/>
                 </div>
                 <div>
                     <button type="submit" class="btn btn-success">Register</button>
