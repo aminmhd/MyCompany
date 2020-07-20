@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@login')->name('app.home.login');
 Route::post('/', 'HomeController@DoLogin');
 Route::post('app/register', 'HomeController@DoRegister')->name('app.home.register');
+/*Route::get('app/profile' , 'HomeController@index')->name('app.home.profile');*/
 
 
 

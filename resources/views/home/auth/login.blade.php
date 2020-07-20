@@ -1,4 +1,4 @@
-@extends('home.Layout.home')
+@extends('home.auth.home')
 
 @section('content')
 
