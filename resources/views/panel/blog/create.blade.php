@@ -31,7 +31,7 @@
                             </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <label>
-<textarea name="blog_description" class="form-control" rows="3"
+<textarea name="blog_description" class="form-control" rows="4" cols="33"
           placeholder="{{ isset($blog_find_edit) ? old('blog_description' , $blog_find_edit->blog_description ) : '' }}"></textarea>
                                 </label>
                             </div>

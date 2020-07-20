@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/Layout/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/Layout/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/blog/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/blog/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +129,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/modal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,16 +142,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\company\resources\views\panel" />
-      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\company\public\modal" />
       <recent name="C:\wamp64\www\company\public\js" />
       <recent name="C:\wamp64\www\company\public" />
       <recent name="C:\wamp64\www\company\public\build\images" />
       <recent name="C:\wamp64\www\company\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\company\resources\views\panel" />
+      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -195,7 +193,7 @@
       <workItem from="1594723211807" duration="15089000" />
       <workItem from="1594815541800" duration="9706000" />
       <workItem from="1594891109668" duration="9172000" />
-      <workItem from="1595061056493" duration="7251000" />
+      <workItem from="1595061056493" duration="14809000" />
     </task>
     <servers />
   </component>
