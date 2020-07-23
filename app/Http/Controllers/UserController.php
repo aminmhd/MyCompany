@@ -28,7 +28,7 @@ class UserController extends Controller
         ];
         $created_table = User::create($create_user);
         if ($created_table instanceof User) {
-            return redirect()->Route('app.create.user')->with(['success' => 'The user was successfully created']);
+            return redirect()->Route('app.show.table')->with(['success' => 'The user was successfully created']);
         }
 
     }

@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/company.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/company.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/Layout/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/auth/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/PanelMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/PanelMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/Template/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Template/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/blog/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/blog/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/notification/notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/notification/notification.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,11 +136,13 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/mckenziearts/laravel-notify" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1eMCRxEtRNNO0ykt0m7w19Zixae" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -143,17 +157,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\company\resources\views\home\auth" />
+      <recent name="C:\wamp64\www\company\resources\views\panel" />
+      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\company\public" />
       <recent name="C:\wamp64\www\company\public\modal" />
       <recent name="C:\wamp64\www\company\public\js" />
       <recent name="C:\wamp64\www\company\public\build\images" />
       <recent name="C:\wamp64\www\company\public\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\company\resources\views\home\auth" />
-      <recent name="C:\wamp64\www\company\resources\views\panel" />
-      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -195,7 +209,9 @@
       <workItem from="1594723211807" duration="15089000" />
       <workItem from="1594815541800" duration="9706000" />
       <workItem from="1594891109668" duration="9172000" />
-      <workItem from="1595061056493" duration="18268000" />
+      <workItem from="1595061056493" duration="19069000" />
+      <workItem from="1595320680344" duration="13895000" />
+      <workItem from="1595490654974" duration="654000" />
     </task>
     <servers />
   </component>

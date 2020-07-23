@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -38,9 +39,9 @@ class HomeController extends Controller
         ];
         $this->validation($request);
         $operator_create = User::create($operator_register);
-        if ($operator_create){
+        if ($operator_create) {
             return redirect()->back()->with(['success' => 'The user was successfully created']);
-        } else{
+        } else {
             return redirect()->back()->with(['error' => 'The user not create']);
         }
 
@@ -48,10 +49,10 @@ class HomeController extends Controller
 
     private function validation($value)
     {
-        $this->validate($value , [
+        $this->validate($value, [
             'user_email' => 'required|unique:users,email|email',
             'user_password' => 'required|min:5|max:10',
-        ],[
+        ], [
             'user_email.required' => 'It is necessary to enter the Email',
             'user_email.email' => 'Please follow the correct email format',
             'user_email.unique' => 'this email is not unique',
@@ -60,4 +61,22 @@ class HomeController extends Controller
             'user_password.max' => 'The password should not be more 10 letters',
         ]);
     }
+
+    public function Logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
+    public function profile()
+    {
+        $user_auth = Auth::user();
+        $user_find_query = User::find($user_auth->id);
+        if ($user_find_query instanceof User) {
+            return view('home.profile.index', compact('user_find_query'));
+        }
+
+    }
+
+
 }

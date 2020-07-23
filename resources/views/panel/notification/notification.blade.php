@@ -18,7 +18,7 @@
     <script>
 
         Swal.fire({
-            position: 'top-end',
+            position: 'button-end',
             icon: 'success',
             title: '{!! session('success') !!}',
             showConfirmButton: false,

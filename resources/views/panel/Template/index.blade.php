@@ -14,16 +14,11 @@
                                id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                 <img src="{{ asset('build/images/amin.jpg') }}" alt="">John Doe
                             </a>
-                           {{-- <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="javascript:;"> Profile</a>
-                                <a class="dropdown-item" href="javascript:;">
-                                    <span class="badge bg-red pull-right">50%</span>
-                                    <span>Settings</span>
-                                </a>
-                                <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ Route('app.home.profile')}}"> Profile</a>
+                                <a class="dropdown-item" href="{{ Route('app.home.logout') }}"><i class="fa fa-sign-out pull-right"></i> Log
                                     Out</a>
-                            </div>--}}
+                            </div>
                         </li>
 
                         <li role="presentation" class="nav-item dropdown open">

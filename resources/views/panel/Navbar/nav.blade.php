@@ -25,22 +25,32 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
+                    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role == 'Admin')
+                        <li><a><i class="fa fa-users"></i> User <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="{{ Route('app.create.user') }}"> create </a></li>
+                                <li><a href="{{ Route('app.show.table') }}">Table</a></li>
+                            </ul>
+                        </li>
 
-                    <li><a><i class="fa fa-users"></i> User <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="{{ Route('app.create.user') }}"> create </a></li>
-                            <li><a href="{{ Route('app.show.table') }}">Table</a></li>
-                        </ul>
-                    </li>
+
+                        <li><a><i class="fa fa-edit"></i> Blog <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="{{ Route('app.blog.create') }}">Create</a></li>
+                                <li><a href="{{ Route('app.blog.show') }}">Table</a></li>
+                            </ul>
+                        </li>
 
 
-                    <li><a><i class="fa fa-edit"></i> Blog <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="{{ Route('app.blog.create') }}">Create</a></li>
-                            <li><a href="{{ Route('app.blog.show') }}">Table</a></li>
-                            {{--<li><a href="#">show</a></li>--}}
-                        </ul>
-                    </li>
+                        <li><a><i class="fa fa-cogs"></i> Setting <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="#">Picture</a></li>
+                                {{-- <li><a href="#">Table</a></li>--}}
+                            </ul>
+                        </li>
+                    @endif
+
+
                     {{-- <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                          <ul class="nav child_menu">
                              <li><a href="general_elements.html">General Elements</a></li>
