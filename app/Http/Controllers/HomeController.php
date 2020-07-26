@@ -72,9 +72,25 @@ class HomeController extends Controller
     {
         $user_auth = Auth::user();
         $user_find_query = User::find($user_auth->id);
+        $all_users = User::all();
         if ($user_find_query instanceof User) {
-            return view('home.profile.index', compact('user_find_query'));
+            return view('home.profile.index', compact('user_find_query' , 'all_users'));
         }
+
+    }
+
+    public function edit()
+    {
+        return view('home.profile.edit');
+    }
+
+    public function store(Request $request)
+    {
+
+    }
+
+    public function message()
+    {
 
     }
 

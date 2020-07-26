@@ -1,5 +1,10 @@
 @extends('panel.Layout.app')
 
+@section('header')
+    <!-- Select2 -->
+    <link href="{{ asset('vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
+
+@endsection
 
 @section('dashboard')
 
@@ -58,20 +63,14 @@
                             <h3>{{ $user_find_query->name }}</h3>
 
                             <ul class="list-unstyled user_data">
-                                <li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA
-                                </li>
-
-                                <li>
-                                    <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
-                                </li>
-
                                 <li class="m-top-xs">
                                     <i class="fa fa-external-link user-profile-icon"></i>
                                     <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
                                 </li>
                             </ul>
 
-                            <a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                            <a href="{{ Route('app.home.edit.profile') }}" class="btn btn-success"><i
+                                    class="fa fa-edit m-right-xs"></i>Edit Profile</a>
                             <br/>
 
                             <!-- start skills -->
@@ -111,36 +110,20 @@
 
                         </div>
                         <div class="col-md-9 col-sm-9 ">
-
-                            <div class="profile_title">
-                                <div class="col-md-6">
-                                    <h2>User Activity Report</h2>
-                                </div>
-                                <div class="col-md-6">
-                                    <div id="reportrange" class="pull-right"
-                                         style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
-                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                        <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- start of user-activity-graph -->
-                            <div id="graph_bar" style="width:100%; height:280px;"></div>
-                            <!-- end of user-activity-graph -->
-
                             <div class="" role="tabpanel" data-example-id="togglable-tabs">
                                 <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#tab_content1" id="home-tab"
                                                                               role="tab" data-toggle="tab"
                                                                               aria-expanded="true">Recent Activity</a>
                                     </li>
+                                    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role == 'Admin')
                                     <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab"
-                                                                        data-toggle="tab" aria-expanded="false">Projects
-                                            Worked on</a>
+                                                                        data-toggle="tab" aria-expanded="false">Message</a>
                                     </li>
+                                    @endif
                                     <li role="presentation" class=""><a href="#tab_content3" role="tab"
                                                                         id="profile-tab2" data-toggle="tab"
-                                                                        aria-expanded="false">Profile</a>
+                                                                        aria-expanded="false">About Me</a>
                                     </li>
                                 </ul>
                                 <div id="myTabContent" class="tab-content">
@@ -237,71 +220,47 @@
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content2"
                                          aria-labelledby="profile-tab">
-
                                         <!-- start user projects -->
-                                        <table class="data table table-striped no-margin">
-                                            <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Project Name</th>
-                                                <th>Client Company</th>
-                                                <th class="hidden-phone">Hours Spent</th>
-                                                <th>Contribution</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>New Company Takeover Review</td>
-                                                <td>Deveint Inc</td>
-                                                <td class="hidden-phone">18</td>
-                                                <td class="vertical-align-mid">
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-success"
-                                                             data-transitiongoal="35"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>New Partner Contracts Consultanci</td>
-                                                <td>Deveint Inc</td>
-                                                <td class="hidden-phone">13</td>
-                                                <td class="vertical-align-mid">
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger"
-                                                             data-transitiongoal="15"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Partners and Inverstors report</td>
-                                                <td>Deveint Inc</td>
-                                                <td class="hidden-phone">30</td>
-                                                <td class="vertical-align-mid">
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-success"
-                                                             data-transitiongoal="45"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>New Company Takeover Review</td>
-                                                <td>Deveint Inc</td>
-                                                <td class="hidden-phone">28</td>
-                                                <td class="vertical-align-mid">
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-success"
-                                                             data-transitiongoal="75"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- end user projects -->
+                                        <form method="post" action="{{ Route('app.home.message.profile') }}" class="form-horizontal form-label-left">
+                                            @include('panel.notification.notification')
+                                            @csrf
+                                            <div class="form-group row">
+                                                <label for="profile_skill" class="col-form-label col-md-3 col-sm-3 label-align ">Skills<span
+                                                        class="required">*</span>
+                                                </label>
+                                                <div class="col-md-9 col-sm-9 ">
+                                                    <select class="form-control js-example-responsive" multiple="multiple" style="width: 75%">
+                                                        @if($all_users && count($all_users) > 0)
+                                                            @foreach($all_users as $all_user)
+                                                                <option>{{ $all_user->name.'/'.''.$all_user->id }}</option>
+                                                            @endforeach
+                                                            @else
+                                                            <option>empty!!!</option>
+                                                            @endif
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label for="Description"
+                                                       class="col-form-label col-md-3 col-sm-3 label-align">Message<span
+                                                        class="required">*</span>
+                                                </label>
 
+                                                <div class="col-md-6 col-sm-7 ">
+                                                    <label>
+<textarea id="Description" name="admin_message" class="form-control" rows="4" cols="70"
+          placeholder="Message"></textarea>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="ln_solid"></div>
+                                        <div class="item form-group">
+                                            <div class="col-md-6 col-sm-6 offset-md-3">
+                                                <button type="submit" class="btn btn-success">Submit</button>
+                                            </div>
+                                        </div>
+                                        <!-- end user projects -->
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content3"
                                          aria-labelledby="profile-tab">
@@ -319,5 +278,22 @@
         </div>
     </div>
 
+
+@stop
+
+
+@section('footer')
+    <!-- Select2 -->
+    <script src="{{ asset('vendors/select2/dist/js/select2.full.min.js') }}"></script>
+    <tester id="tags_1_tag_autosize_tester"
+            style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13px; font-family: helvetica,serif; font-weight: 400; letter-spacing: 0px; white-space: nowrap;">
+    </tester>
+    <div class="autocomplete-suggestions"
+         style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
+<script>
+    $(".js-example-responsive").select2({
+        width: 'resolve' // need to override the changed default
+    });
+</script>
 
 @endsection

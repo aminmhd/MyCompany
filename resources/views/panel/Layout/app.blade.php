@@ -14,6 +14,8 @@
     <link href="{{ asset('vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- iCheck -->
     <link href="{{ asset('vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="{{ asset('vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
 
     <!-- bootstrap-progressbar -->
     <link href="{{ asset('vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
@@ -25,20 +27,8 @@
     <!-- Custom Theme Style -->
     <link href="{{ asset('build/css/custom.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    @yield('header')
 
-    {{--//////////////////////////////////////////////modal--}}
-{{--    <!-- MDB icon -->
-    <link rel="icon" href="{{ asset('modal/img/mdb-favicon.ico') }}" type="image/x-icon">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="css/mdb.min.css">
-    <!-- Your custom styles (optional) -->
-    <link rel="stylesheet" href="css/style.css">--}}
 
 </head>
 
@@ -51,7 +41,7 @@
         <div class="right_col" role="main">
             <!-- top tiles -->
             @yield('dashboard')
-          {{--  @yield('content')--}}
+            {{--  @yield('content')--}}
         </div>
     {{--/page content--}}
     <!-- footer content -->
@@ -66,20 +56,8 @@
 </div>
 
 
-
 <!-- jQuery -->
 <script src="{{ asset('vendors/jquery/dist/jquery.min.js') }}"></script>
-{{--<script type="text/javascript" src="{{ asset('modal/js/jquery.min.js') }}"></script>
---}}{{--/////////////////////////////////modal--}}{{--
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="{{ asset('modal/js/popper.min.js') }}"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="{{ asset('modal/js/bootstrap.min.js') }}"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="{{ asset('modal/js/mdb.min.js') }}"></script>
-<!-- Your custom scripts (optional) -->
-<script type="text/javascript"></script>
---}}{{--/////////////////////////////////--}}
 <!-- Bootstrap -->
 <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <!-- FastClick -->
@@ -115,10 +93,11 @@
 <!-- bootstrap-daterangepicker -->
 <script src="{{ asset('vendors/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-
 <!-- Custom Theme Scripts -->
+
 <script src="{{ asset('build/js/custom.min.js') }}"></script>
 <script src="{{ asset('js/sweetalert.js') }}"></script>
+@yield('footer')
 @include('panel.notification.notification')
 </body>
 </html>
