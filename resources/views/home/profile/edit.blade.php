@@ -1,10 +1,6 @@
 @extends('panel.Layout.app')
 
-@section('header')
-    <!-- Select2 -->
-    <link href="{{ asset('vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
 
-@endsection
 
 @section('dashboard')
 
@@ -27,7 +23,8 @@
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input id="profile_website" name="profile_website" type="text" class="form-control">
+                                <input id="profile_website" name="profile_website" type="text" class="form-control"
+                                       value="{{ isset($profile_find_user) ? old('profile_website' , $profile_find_user->profile_website) : '' }}">
                             </div>
                         </div>
                         <div class="item form-group">
@@ -38,7 +35,7 @@
                             <div class="col-md-6 col-sm-6 ">
                                 <label>
 <textarea name="profile_description" class="form-control" rows="4" cols="33"
-          placeholder="Description"></textarea>
+          placeholder="Description">{{ isset($profile_find_user) ? old('profile_description' , $profile_find_user->profile_description) : '' }}</textarea>
                                 </label>
                             </div>
                         </div>
@@ -68,21 +65,3 @@
 
 
 
-@section('footer')
-    <!-- Select2 -->
-    <script src="{{ asset('vendors/select2/dist/js/select2.full.min.js') }}"></script>
-    <tester id="tags_1_tag_autosize_tester"
-            style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13px; font-family: helvetica,serif; font-weight: 400; letter-spacing: 0px; white-space: nowrap;">
-    </tester>
-    <div class="autocomplete-suggestions"
-         style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
-    <script>
-        $(".js-example-responsive").select2({
-            width: 'resolve',
-            theme: 'classic',
-            tags: true,
-            tokenSeparators: [',', ' ']
-        });
-    </script>
-
-@endsection

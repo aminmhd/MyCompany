@@ -21,6 +21,8 @@ Route::get('app/logout', 'HomeController@Logout')->name('app.home.logout');
 Route::get('app/profile', 'HomeController@profile')->name('app.home.profile');
 Route::get('app/profile/edit', 'HomeController@edit')->name('app.home.edit.profile');
 Route::post('app/profile/edit', 'HomeController@store')->name('app.home.edit.profile.store');
+Route::get('app/profile/update/{profile_id}', 'HomeController@change')->name('app.home.update.profile');
+Route::post('app/profile/update/{profile_id}', 'HomeController@update')->name('app.home.update.profile.store');;
 Route::post('app/profile/admin/message', 'HomeController@message')->name('app.home.message.profile');
 /*Route::get('app/profile/test', 'HomeController@test')->name('app.home.test');*/
 

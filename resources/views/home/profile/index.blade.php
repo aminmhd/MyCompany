@@ -32,20 +32,21 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>User Report <small>Activity report</small></h2>
+                        <h2>Profile <small></small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Settings 1</a>
-                                    <a class="dropdown-item" href="#">Settings 2</a>
-                                </div>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
+                            {{--     <li class="dropdown">
+                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                         <a class="dropdown-item" href="#">Settings 1</a>
+                                         <a class="dropdown-item" href="#">Settings 2</a>
+                                     </div>     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+
+                                 </li>--}}
+                            {{--     <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                 </li>--}}
+
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -68,12 +69,20 @@
                                     <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
                                 </li>
                             </ul>
+                            @if($profile_information_user && count($profile_information_user) > 0)
+                                @foreach($profile_information_user as $profile_information)
+                                <a href="{{ Route('app.home.update.profile' , $profile_information->profile_id ) }}"
+                                   class="btn btn-success"><i
+                                        class="fa fa-edit m-right-xs"></i>Update Profile</a>
+                                <br/>
+                                @endforeach
+                            @else
+                                <a href="{{ Route('app.home.edit.profile') }}" class="btn btn-success"><i
+                                        class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                                <br/>
+                        @endif
 
-                            <a href="{{ Route('app.home.edit.profile') }}" class="btn btn-success"><i
-                                    class="fa fa-edit m-right-xs"></i>Edit Profile</a>
-                            <br/>
-
-                            <!-- start skills -->
+                        <!-- start skills -->
                             <h4>Skills</h4>
                             <ul class="list-unstyled user_data">
                                 <li>
@@ -117,9 +126,10 @@
                                                                               aria-expanded="true">Notification</a>
                                     </li>
                                     @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role == 'Admin')
-                                    <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab"
-                                                                        data-toggle="tab" aria-expanded="false">Message</a>
-                                    </li>
+                                        <li role="presentation" class=""><a href="#tab_content2" role="tab"
+                                                                            id="profile-tab"
+                                                                            data-toggle="tab" aria-expanded="false">Message</a>
+                                        </li>
                                     @endif
                                     <li role="presentation" class=""><a href="#tab_content3" role="tab"
                                                                         id="profile-tab2" data-toggle="tab"
@@ -150,12 +160,12 @@
                                                     <p class="url">
                                                         <span class="fs1 text-info" aria-hidden="true"
                                                               data-icon=""></span>
-                                                     {{--   <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
-                                                            Test.doc </a>--}}
+                                                        {{--   <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
+                                                               Test.doc </a>--}}
                                                     </p>
                                                 </div>
                                             </li>
-                                         {{--///////////////////////////////////////////////////////////////////////////////////////////////--}}
+                                            {{--///////////////////////////////////////////////////////////////////////////////////////////////--}}
                                         </ul>
                                         <!-- end recent activity -->
 
@@ -163,22 +173,27 @@
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content2"
                                          aria-labelledby="profile-tab">
                                         <!-- start user projects -->
-                                        <form method="post" action="{{ Route('app.home.message.profile') }}" class="form-horizontal form-label-left">
+                                        <form method="post" action="{{ Route('app.home.message.profile') }}"
+                                              class="form-horizontal form-label-left">
                                             @include('panel.notification.notification')
                                             @csrf
                                             <div class="form-group row">
-                                                <label for="profile_skill" class="col-form-label col-md-3 col-sm-3 label-align ">Skills<span
+                                                <label for="profile_skill"
+                                                       class="col-form-label col-md-3 col-sm-3 label-align ">Skills<span
                                                         class="required">*</span>
                                                 </label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <select class="form-control js-example-responsive" name="admin_user_select[]" multiple="multiple" style="width: 75%;border: 1px solid #ced4da;">
+                                                    <select class="form-control js-example-responsive"
+                                                            name="admin_user_select[]" multiple="multiple"
+                                                            style="width: 75%;border: 1px solid #ced4da;">
                                                         @if($all_users && count($all_users) > 0)
                                                             @foreach($all_users as $all_user)
-                                                                <option value="{{ $all_user->id }}">{{ $all_user->name.'/'.''.$all_user->id }}</option>
+                                                                <option
+                                                                    value="{{ $all_user->id }}">{{ $all_user->name.'/'.''.$all_user->id }}</option>
                                                             @endforeach
-                                                            @else
+                                                        @else
                                                             <option>empty!!!</option>
-                                                            @endif
+                                                        @endif
                                                     </select>
                                                 </div>
                                             </div>
@@ -233,10 +248,10 @@
     </tester>
     <div class="autocomplete-suggestions"
          style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
-<script>
-    $(".js-example-responsive").select2({
-        width: 'resolve' // need to override the changed default
-    });
-</script>
+    <script>
+        $(".js-example-responsive").select2({
+            width: 'resolve' // need to override the changed default
+        });
+    </script>
 
 @endsection
