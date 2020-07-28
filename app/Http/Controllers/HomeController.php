@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
+
 
 class HomeController extends Controller
 {
@@ -148,7 +150,9 @@ class HomeController extends Controller
             'profile_img.required' => 'It is necessary to enter upload image',
         ]);
         $profile_edit_img_name = Str::random(5) . "/" . $request->file('profile_img')->getClientOriginalName();
-        $request->file('profile_img')->move('images' , $profile_edit_img_name);
+        $crop_photo = $request->file('profile_img');
+      //  $crop_photo->resize(100 , 100);
+        $crop_photo->move('images' , $profile_edit_img_name );
         $profile_update = Profile::find($profile_id);
         $profile_description_about_me = $request->get('profile_description');
         $profile_update_information = [
@@ -158,6 +162,7 @@ class HomeController extends Controller
         ];
         if ($profile_update instanceof Profile) {
             $profile_update->update($profile_update_information);
+
             return redirect()->Route('app.home.profile')->with(['success' => 'this profile was successfully updated']);
         }
     }
