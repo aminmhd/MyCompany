@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -87,6 +88,37 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+        $auth_user_find = Auth::user();
+        $user_model_find = User::find($auth_user_find->id);
+        $img_profile_name = Str::random(5).'/'.$request->file('profile_img')->getClientOriginalName();
+        $this->validate($request, [
+            'profile_website' => 'required',
+            'profile_description' => 'required',
+            'profile_img' => 'required',
+        ], [
+            'profile_website.required' => 'It is necessary to enter your website',
+            'profile_description.required' => 'It is necessary to enter your about me',
+            'profile_img.required' => 'It is necessary to enter upload image',
+        ]);
+        $profile_information = [
+            'profile_website' => $request->get('profile_website'),
+            'profile_user_id' => $auth_user_find->id,
+            'profile_user_name' => $auth_user_find->name,
+            'profile_description' => $request->get('profile_description'),
+            'profile_img' => $img_profile_name,
+            'img_size' => $request->file('profile_img')->getSize(),
+        ];
+        if ($user_model_find instanceof User){
+            $create_edit = Profile::create($profile_information);
+            $request->file('profile_img')->move('images' , $img_profile_name);
+            if ($create_edit) {
+                return redirect()->Route('app.home.profile')->with(['success' => 'your edit is successfully created']);
+            }else {
+                return redirect()->Route('app.home.profile')->with(['error' => 'your edit is not successfully create']);
+            }
+        }
+
+
 
     }
 
@@ -106,14 +138,14 @@ class HomeController extends Controller
         }
     }
 
-    public function test()
+/*    public function test()
     {
         $user_auth_test = Auth::user();
         $user_find_test = User::find(22);
         $user_message = $user_find_test->messages()->get();
         dd($user_message);
 
-    }
+    }*/
 
 
 }
