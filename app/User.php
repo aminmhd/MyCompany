@@ -18,11 +18,11 @@ class User extends Authenticatable
     {
         switch ($this->attributes['role']) {
             case self::ADMIN:
-             return 'Admin';
-            break;
+                return 'Admin';
+                break;
             case self::OPERATOR:
-             return 'Operator';
-             break;
+                return 'Operator';
+                break;
         }
     }
 
@@ -60,4 +60,8 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function messages()
+    {
+        return $this->belongsToMany(Message::class , 'user_message' , 'user_id' , 'message_id')->withPivot(['created_at']);
+    }
 }

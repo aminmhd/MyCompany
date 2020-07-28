@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -74,7 +75,7 @@ class HomeController extends Controller
         $user_find_query = User::find($user_auth->id);
         $all_users = User::all();
         if ($user_find_query instanceof User) {
-            return view('home.profile.index', compact('user_find_query' , 'all_users'));
+            return view('home.profile.index', compact('user_find_query', 'all_users'));
         }
 
     }
@@ -89,8 +90,28 @@ class HomeController extends Controller
 
     }
 
-    public function message()
+    public function message(Request $request)
     {
+        $auth_user = Auth::user();
+        $message_request = [
+            'message_description' => $request->get('admin_message'),
+            'message_user_id' => $auth_user->id,
+            'message_user_name' => $auth_user->name,
+        ];
+        $request_sync_user_message = $request->get('admin_user_select');
+        $create_table_message = Message::create($message_request);
+        if ($create_table_message) {
+            $create_table_message->users()->sync($request_sync_user_message);
+            return redirect()->Route('app.home.test');
+        }
+    }
+
+    public function test()
+    {
+        $user_auth_test = Auth::user();
+        $user_find_test = User::find(22);
+        $user_message = $user_find_test->messages()->get();
+        dd($user_message);
 
     }
 

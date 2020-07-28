@@ -50,16 +50,6 @@
                                 <input type="file" class="" id="profile_img" name="profile_img" required="required">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="profile_skill" class="col-form-label col-md-3 col-sm-3 label-align ">Skills<span
-                                    class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <select id="profile_skill" name="profile_skill[]" class="js-example-responsive"
-                                        multiple="multiple" style="width: 75%">
-                                </select>
-                            </div>
-                        </div>
                         <div class="ln_solid"></div>
                         <div class="item form-group">
                             <div class="col-md-6 col-sm-6 offset-md-3">

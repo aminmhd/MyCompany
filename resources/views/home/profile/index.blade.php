@@ -114,7 +114,7 @@
                                 <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#tab_content1" id="home-tab"
                                                                               role="tab" data-toggle="tab"
-                                                                              aria-expanded="true">Recent Activity</a>
+                                                                              aria-expanded="true">Notification</a>
                                     </li>
                                     @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role == 'Admin')
                                     <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab"
@@ -132,6 +132,7 @@
 
                                         <!-- start recent activity -->
                                         <ul class="messages">
+                                            {{--/////////////////////////////////////////////////////////////////////////--}}
                                             <li>
                                                 <img src="{{ asset('build/images/amin.jpg') }}" class="avatar"
                                                      alt="Avatar">
@@ -149,71 +150,12 @@
                                                     <p class="url">
                                                         <span class="fs1 text-info" aria-hidden="true"
                                                               data-icon=""></span>
-                                                        <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
-                                                            Test.doc </a>
+                                                     {{--   <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
+                                                            Test.doc </a>--}}
                                                     </p>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <img src="images/img.jpg" class="avatar" alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-error">21</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Brian Michaels</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of
-                                                        them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher
-                                                        retro keffiyeh dreamcatcher synth.
-                                                    </blockquote>
-                                                    <br/>
-                                                    <p class="url">
-                                                        <span class="fs1" aria-hidden="true" data-icon=""></span>
-                                                        <a href="#" data-original-title="">Download</a>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="images/img.jpg" class="avatar" alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-info">24</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Desmond Davison</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of
-                                                        them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher
-                                                        retro keffiyeh dreamcatcher synth.
-                                                    </blockquote>
-                                                    <br/>
-                                                    <p class="url">
-                                                        <span class="fs1 text-info" aria-hidden="true"
-                                                              data-icon=""></span>
-                                                        <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
-                                                            Test.doc </a>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="images/img.jpg" class="avatar" alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-error">21</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Brian Michaels</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of
-                                                        them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher
-                                                        retro keffiyeh dreamcatcher synth.
-                                                    </blockquote>
-                                                    <br/>
-                                                    <p class="url">
-                                                        <span class="fs1" aria-hidden="true" data-icon=""></span>
-                                                        <a href="#" data-original-title="">Download</a>
-                                                    </p>
-                                                </div>
-                                            </li>
-
+                                         {{--///////////////////////////////////////////////////////////////////////////////////////////////--}}
                                         </ul>
                                         <!-- end recent activity -->
 
@@ -229,10 +171,10 @@
                                                         class="required">*</span>
                                                 </label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <select class="form-control js-example-responsive" multiple="multiple" style="width: 75%">
+                                                    <select class="form-control js-example-responsive" name="admin_user_select[]" multiple="multiple" style="width: 75%;border: 1px solid #ced4da;">
                                                         @if($all_users && count($all_users) > 0)
                                                             @foreach($all_users as $all_user)
-                                                                <option>{{ $all_user->name.'/'.''.$all_user->id }}</option>
+                                                                <option value="{{ $all_user->id }}">{{ $all_user->name.'/'.''.$all_user->id }}</option>
                                                             @endforeach
                                                             @else
                                                             <option>empty!!!</option>
@@ -253,13 +195,14 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                        </form>
-                                        <div class="ln_solid"></div>
-                                        <div class="item form-group">
-                                            <div class="col-md-6 col-sm-6 offset-md-3">
-                                                <button type="submit" class="btn btn-success">Submit</button>
+                                            <div class="ln_solid"></div>
+                                            <div class="item form-group">
+                                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
+
                                         <!-- end user projects -->
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content3"

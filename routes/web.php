@@ -22,6 +22,7 @@ Route::get('app/profile', 'HomeController@profile')->name('app.home.profile');
 Route::get('app/profile/edit', 'HomeController@edit')->name('app.home.edit.profile');
 Route::post('app/profile/edit', 'HomeController@store')->name('app.home.edit.profile.store');
 Route::post('app/profile/admin/message', 'HomeController@message')->name('app.home.message.profile');
+Route::get('app/profile/test', 'HomeController@test')->name('app.home.test');
 
 
 
