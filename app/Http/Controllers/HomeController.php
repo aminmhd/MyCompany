@@ -79,11 +79,12 @@ class HomeController extends Controller
         $user_find_query = User::find($user_auth->id);
         $all_users = User::all();
         $query_table = DB::table('profiles');
+        //$query_table = Profile::all();
         $public_path = public_path('\image');
         $profile_information_user = $query_table->where('profile_user_id', '=', $user_auth->id)->get();
-        dd($profile_information_user);
+      //  $profile_information_user = $profile_information_user[0];
         if ($user_find_query instanceof User) {
-            return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user' , 'public_path'));
+            return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user', 'public_path'));
         }
 
     }

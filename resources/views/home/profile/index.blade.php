@@ -57,11 +57,9 @@
                                     <!-- Current avatar -->
                                     {{--/////////////////////////////////////////////////////////////////////--}}
                                     {{--$public_path--}}
-
-                                        {{ dd($profile_information_user->profile_img) }}
-
+                                    {{ dd($profile_information_user) }}
                                     <img class="img-responsive avatar-view"
-                                         src="{{ isset($profile_information_user->profile_img) ? $profile_information_user->profile_img : '' }}"
+                                         src=""
                                          alt="Avatar"
                                          title="Change the avatar">
                                 </div>
