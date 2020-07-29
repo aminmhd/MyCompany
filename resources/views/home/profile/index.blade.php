@@ -56,8 +56,13 @@
                                 <div id="crop-avatar">
                                     <!-- Current avatar -->
                                     {{--/////////////////////////////////////////////////////////////////////--}}
+                                    {{--$public_path--}}
+
+                                        {{ dd($profile_information_user->profile_img) }}
+
                                     <img class="img-responsive avatar-view"
-                                         src="{{ asset('production/images/picture.jpg') }}" alt="Avatar"
+                                         src="{{ isset($profile_information_user->profile_img) ? $profile_information_user->profile_img : '' }}"
+                                         alt="Avatar"
                                          title="Change the avatar">
                                 </div>
                             </div>
@@ -71,10 +76,10 @@
                             </ul>
                             @if($profile_information_user && count($profile_information_user) > 0)
                                 @foreach($profile_information_user as $profile_information)
-                                <a href="{{ Route('app.home.update.profile' , $profile_information->profile_id ) }}"
-                                   class="btn btn-success"><i
-                                        class="fa fa-edit m-right-xs"></i>Update Profile</a>
-                                <br/>
+                                    <a href="{{ Route('app.home.update.profile' , $profile_information->profile_id ) }}"
+                                       class="btn btn-success"><i
+                                            class="fa fa-edit m-right-xs"></i>Update Profile</a>
+                                    <br/>
                                 @endforeach
                             @else
                                 <a href="{{ Route('app.home.edit.profile') }}" class="btn btn-success"><i
@@ -179,7 +184,7 @@
                                             @csrf
                                             <div class="form-group row">
                                                 <label for="profile_skill"
-                                                       class="col-form-label col-md-3 col-sm-3 label-align ">Skills<span
+                                                       class="col-form-label col-md-3 col-sm-3 label-align ">Users<span
                                                         class="required">*</span>
                                                 </label>
                                                 <div class="col-md-9 col-sm-9 ">

@@ -4,7 +4,15 @@
     <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_26_103022_create_user_message_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_26_103022_create_user_message_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1595235070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/amin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/photo_2020-06-30_14-19-45 (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/photo_2020-06-30_14-19-50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/photo_2020-06-30_14-30-24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/screensho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -203,6 +211,9 @@
       <workItem from="1595758753562" duration="6985000" />
       <workItem from="1595924015667" duration="6700000" />
       <workItem from="1595934887573" duration="11670000" />
+      <workItem from="1595949135367" duration="14000" />
+      <workItem from="1595949180980" duration="30000" />
+      <workItem from="1596011595513" duration="9354000" />
     </task>
     <servers />
   </component>

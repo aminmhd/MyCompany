@@ -14,7 +14,7 @@ class CreateUserMessageTable extends Migration
     public function up()
     {
         Schema::create('user_message', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->bigInteger('user_id');
             $table->bigInteger('message_id');
             $table->dateTime('created_at');
 
