@@ -23,6 +23,9 @@ Route::get('app/profile/edit', 'HomeController@edit')->name('app.home.edit.profi
 Route::post('app/profile/edit', 'HomeController@store')->name('app.home.edit.profile.store');
 Route::get('app/profile/update/{profile_id}', 'HomeController@change')->name('app.home.update.profile');
 Route::post('app/profile/update/{profile_id}', 'HomeController@update')->name('app.home.update.profile.store');
+Route::get('app/gallery', 'GalleryController@index')->name('upload.gallery.picture');
+Route::post('app/gallery', 'GalleryController@store')->name('upload.gallery.store');
+
 
 
 

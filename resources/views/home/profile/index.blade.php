@@ -56,8 +56,7 @@
                                 <div id="crop-avatar">
                                     <!-- Current avatar -->
                                     {{--/////////////////////////////////////////////////////////////////////--}}
-                                    {{--$public_path--}}
-                                    {{ dd($profile_information_user) }}
+                                    {{-- {{ dd($profile_information_user) }}--}}
                                     <img class="img-responsive avatar-view"
                                          src=""
                                          alt="Avatar"
@@ -73,12 +72,10 @@
                                 </li>
                             </ul>
                             @if($profile_information_user && count($profile_information_user) > 0)
-                                @foreach($profile_information_user as $profile_information)
-                                    <a href="{{ Route('app.home.update.profile' , $profile_information->profile_id ) }}"
-                                       class="btn btn-success"><i
-                                            class="fa fa-edit m-right-xs"></i>Update Profile</a>
-                                    <br/>
-                                @endforeach
+                                <a href="{{ Route('app.home.update.profile' , $profile_information_user[0]->profile_id ) }}"
+                                   class="btn btn-success"><i
+                                        class="fa fa-edit m-right-xs"></i>Update Profile</a>
+                                <br/>
                             @else
                                 <a href="{{ Route('app.home.edit.profile') }}" class="btn btn-success"><i
                                         class="fa fa-edit m-right-xs"></i>Edit Profile</a>
@@ -144,33 +141,35 @@
                                          aria-labelledby="home-tab">
 
                                         <!-- start recent activity -->
-                                        <ul class="messages">
-                                            {{--/////////////////////////////////////////////////////////////////////////--}}
-                                            <li>
-                                                <img src="{{ asset('build/images/amin.jpg') }}" class="avatar"
-                                                     alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-info">24</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Desmond Davison</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of
-                                                        them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher
-                                                        retro keffiyeh dreamcatcher synth.
-                                                    </blockquote>
-                                                    <br/>
-                                                    <p class="url">
+                                        @if($user_message && count($user_message))
+                                            <ul class="messages">
+                                                {{--/////////////////////////////////////////////////////////////////////////--}}
+                                                @foreach($user_message as $message)
+                                                    <li>
+                                                        <img src="{{ asset('build/images/amin.jpg') }}" class="avatar"
+                                                             alt="Avatar">
+                                                        <div class="message_date">
+                                                            <p class="month">{{ $message->created_at }}</p>
+                                                        </div>
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">{{ $message->message_user_name }}</h4>
+                                                            <div class="message" style="height: auto">
+                                                                {{ $message->message_description }}
+                                                            </div>
+                                                            <br/>
+                                                            <p class="url">
                                                         <span class="fs1 text-info" aria-hidden="true"
                                                               data-icon=""></span>
-                                                        {{--   <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
-                                                               Test.doc </a>--}}
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            {{--///////////////////////////////////////////////////////////////////////////////////////////////--}}
-                                        </ul>
-                                        <!-- end recent activity -->
+                                                                {{--   <a href="#"><i class="fa fa-paperclip"></i> User Acceptance
+                                                                       Test.doc </a>--}}
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                                {{--///////////////////////////////////////////////////////////////////////////////////////////////--}}
+                                            </ul>
+                                    @endif
+                                    <!-- end recent activity -->
 
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content2"
@@ -244,6 +243,9 @@
 
 
 @section('footer')
+    <!-- morris.js -->
+    <script src="{{ asset('vendors/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('vendors/morris.js/morris.min.js') }}"></script>
     <!-- Select2 -->
     <script src="{{ asset('vendors/select2/dist/js/select2.full.min.js') }}"></script>
     <tester id="tags_1_tag_autosize_tester"

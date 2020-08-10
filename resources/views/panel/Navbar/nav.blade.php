@@ -50,6 +50,13 @@
                         </li>
                     @endif
 
+                        <li><a><i class="fa fa-photo"></i> Gallery <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="{{ Route('upload.gallery.picture') }}">Upload</a></li>
+                                <li><a href="#">Show</a></li>
+                                {{-- <li><a href="#">Table</a></li>--}}
+                            </ul>
+                        </li>
 
                     {{-- <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                          <ul class="nav child_menu">

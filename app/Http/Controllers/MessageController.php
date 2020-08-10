@@ -24,4 +24,5 @@ class MessageController extends Controller
             return redirect()->Route('app.home.profile')->with(['success' => 'your messages successfully send']);
         }
     }
+
 }

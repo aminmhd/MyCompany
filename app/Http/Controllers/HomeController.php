@@ -79,12 +79,11 @@ class HomeController extends Controller
         $user_find_query = User::find($user_auth->id);
         $all_users = User::all();
         $query_table = DB::table('profiles');
-        //$query_table = Profile::all();
         $public_path = public_path('\image');
+        $user_message = $user_find_query->messages()->get();
         $profile_information_user = $query_table->where('profile_user_id', '=', $user_auth->id)->get();
-      //  $profile_information_user = $profile_information_user[0];
         if ($user_find_query instanceof User) {
-            return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user', 'public_path'));
+            return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user', 'public_path' , 'user_message'));
         }
 
     }
@@ -98,7 +97,11 @@ class HomeController extends Controller
     {
         $auth_user_find = Auth::user();
         $user_model_find = User::find($auth_user_find->id);
-        $img_profile_name = $request->file('profile_img')->getClientOriginalName();
+        $img_profile_name = $request->file('profile_img');
+        /*//////////////////////////////*/
+
+
+
         $this->validate($request, [
             'profile_website' => 'required',
             'profile_description' => 'required',
@@ -113,12 +116,11 @@ class HomeController extends Controller
             'profile_user_id' => $auth_user_find->id,
             'profile_user_name' => $auth_user_find->name,
             'profile_description' => $request->get('profile_description'),
-            'profile_img' => $img_profile_name,
+            'profile_img' => $img_profile_name->getClientOriginalName(),
             'img_size' => $request->file('profile_img')->getSize(),
         ];
         if ($user_model_find instanceof User) {
             $create_edit = Profile::create($profile_information);
-            $request->file('profile_img')->move('images', $img_profile_name);
             if ($create_edit) {
                 return redirect()->Route('app.home.profile')->with(['success' => 'your edit is successfully created']);
             } else {
@@ -152,13 +154,12 @@ class HomeController extends Controller
             'profile_description.required' => 'It is necessary to enter your about me',
             'profile_img.required' => 'It is necessary to enter upload image',
         ]);
-        $profile_edit_img_name = $request->file('profile_img')->getClientOriginalName();
-        $crop_photo = $request->file('profile_img');
+        $profile_edit_img_name = $request->file('profile_img');
         /*///////////////////*/
         $destinationPath = public_path('\images');
-        $thumb_img = Image::make($crop_photo->getRealPath())->fit(220, 220);
-        $thumb_img->save('c:\wamp64\www\company\public\images' . '\\' . $profile_edit_img_name, 80);
-        $crop_photo->move($destinationPath, $profile_edit_img_name);
+        $thumb_img = Image::make($profile_edit_img_name->getRealPath())->resize(220, 220);
+        $thumb_img->save('c:\wamp64\www\company\public\images' . '\\' . $profile_edit_img_name->getClientOriginalName(), 80);
+        $profile_edit_img_name->move($destinationPath, $profile_edit_img_name->getClientOriginalName());
 
 
         // $crop_photo->move('images' , $profile_edit_img_name );
@@ -167,7 +168,7 @@ class HomeController extends Controller
         $profile_update_information = [
             'profile_website' => $request->get('profile_website'),
             'profile_description' => isset($profile_description_about_me) ? $profile_description_about_me : '!!!sorry this field is empty!!!',
-            'profile_img' => $profile_edit_img_name,
+            'profile_img' => $profile_edit_img_name->getClientOriginalName(),
         ];
         if ($profile_update instanceof Profile) {
             $profile_update->update($profile_update_information);
