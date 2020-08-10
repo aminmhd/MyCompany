@@ -8,12 +8,12 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        return view('home.gallery.upload');
+        return view('panel.gallery.upload');
     }
 
     public function store(Request $request)
     {
-        dd($request);
+        dd($request->file('images'));
 
     }
 }

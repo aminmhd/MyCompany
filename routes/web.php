@@ -18,11 +18,13 @@ Route::get('/', 'HomeController@login')->name('app.home.login');
 Route::post('/', 'HomeController@DoLogin');
 Route::post('app/register', 'HomeController@DoRegister')->name('app.home.register');
 Route::get('app/logout', 'HomeController@Logout')->name('app.home.logout');
+//profile
 Route::get('app/profile', 'HomeController@profile')->name('app.home.profile');
 Route::get('app/profile/edit', 'HomeController@edit')->name('app.home.edit.profile');
 Route::post('app/profile/edit', 'HomeController@store')->name('app.home.edit.profile.store');
 Route::get('app/profile/update/{profile_id}', 'HomeController@change')->name('app.home.update.profile');
 Route::post('app/profile/update/{profile_id}', 'HomeController@update')->name('app.home.update.profile.store');
+//gallery
 Route::get('app/gallery', 'GalleryController@index')->name('upload.gallery.picture');
 Route::post('app/gallery', 'GalleryController@store')->name('upload.gallery.store');
 
