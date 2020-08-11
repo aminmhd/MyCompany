@@ -152,7 +152,7 @@
                                                 </div><!-- btn-orange -->
                                             </div><!-- col-3 -->
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="image_text"
+                                                <input type="text" class="form-control" name="image_text[]"
                                                        placeholder="Note">
                                             </div><!--col-8-->
                                             <div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a>
@@ -234,7 +234,7 @@
             });
 
             $(".btn-new").on('click', function () {
-                $("#uploader").append('<div class="row uploadDoc"><div class="col-sm-3"><div class="docErr">Please upload valid file</div><!--error--><div class="fileUpload btn btn-orange"> <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon"><span class="upl" id="upload">Upload document</span><input type="file" class="upload up" id="up" onchange="readURL(this);" /></div></div><div class="col-sm-8"><input type="text" class="form-control" name="" placeholder="Note"></div><div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div></div>');
+                $("#uploader").append('<div class="row uploadDoc"><div class="col-sm-3"><div class="docErr">Please upload valid file</div><!--error--><div class="fileUpload btn btn-orange"> <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon"><span class="upl" id="upload">Upload document</span><input type="file" class="upload up" name="images[]" id="up" onchange="readURL(this);" /></div></div><div class="col-sm-8"><input type="text" class="form-control" name="image_text[]" placeholder="Note"></div><div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div></div>');
             });
 
             $(document).on("click", "a.btn-check", function () {
