@@ -13,7 +13,7 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->file('images'));
+        dd($request);
 
     }
 }

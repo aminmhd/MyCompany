@@ -14,7 +14,8 @@
 
         .it .btn-orange {
             background-color: transparent;
-            border-color: #ced4da; !important;
+            border-color: #ced4da;
+        !important;
             color: #777;
             text-align: left;
             width: 100%;
