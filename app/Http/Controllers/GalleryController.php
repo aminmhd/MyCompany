@@ -6,6 +6,7 @@ use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class GalleryController extends Controller
 {
     public function index()
@@ -25,6 +26,9 @@ class GalleryController extends Controller
                 'image_type' => $images->getMimeType(),
                 'image_user_id' => $auth_user_find->id,
             ]);
+            $image_name = $images->getClientOriginalName();
+            $public_path = public_path('images');
+            $images->move($public_path, $image_name);
         }
         if ($image_create instanceof Image) {
             return redirect()->Route('upload.gallery.picture')->with(['success' => 'your images successfully uploaded']);
@@ -37,7 +41,21 @@ class GalleryController extends Controller
 
     public function show()
     {
-        return view('panel.gallery.show');
+        $image_find = Image::all();
+        return view('panel.gallery.show', compact('image_find'));
+    }
+
+    public function destroy($image_id)
+    {
+        if (ctype_digit($image_id)) {
+            $image_find = Image::find($image_id);
+            if ($image_find instanceof Image) {
+                $image_find->delete();
+                return redirect()->Route('show.gallery.image')->with(['success' => 'your image deleted successfully']);
+            } else {
+                return redirect()->Route('show.gallery.image')->with(['error' => 'your image not deleted successfully']);
+            }
+        }
     }
 
 

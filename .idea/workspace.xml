@@ -2,12 +2,157 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/modals/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/modals/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/modals/scss/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_11_094146_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_11_094146_create_images_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/Layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables-select.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables-select.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables-select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables-select2.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/datatables2.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/directives.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/directives.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/flag.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/flag.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/jquery.zmd.hierarchical-display.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/jquery.zmd.hierarchical-display.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/rating.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/addons/rating.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/mdb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/mdb.lite.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/mdb.lite.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/mdb.lite.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/mdb.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/mdb.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/modules/animations-extended.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/modules/animations-extended.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/exclusive-templates/unlock-exclusive-freebies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/mdb-favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/overlays/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/svg/arrow_left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/img/svg/arrow_right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables-select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables-select.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables-select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables-select2.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/datatables2.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/directives.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/directives.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/flag.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/flag.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/imagesloaded.pkgd.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/jquery.zmd.hierarchical-display.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/jquery.zmd.hierarchical-display.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/masonry.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/masonry.pkgd.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/rating.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/addons/rating.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/mdb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/mdb.lite.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/mdb.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/mdb.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/animations-extended.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/animations-extended.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/forms-free.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/forms-free.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/scrolling-navbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/scrolling-navbar.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/treeview.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/treeview.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/wow.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/modules/wow.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/_custom-styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/_custom-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_datatables-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_datatables-select2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_datatables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_datatables2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_directives.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_flag.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_hierarchical-display.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/addons/_rating.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_masks.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/_waves.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/bootstrap/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/bootstrap/_rfs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/core/bootstrap/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_animations-basic.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_badges.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_carousels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_depreciated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_dropdowns.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_footers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_loader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_modals.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_msc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_steppers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/_treeview.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/modules/animations-extended/_module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/free/modules/animations-extended/animations-extended.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/mdb-free.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/scss/mdb-lite-free.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/free/forms-free.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/free/scrolling-navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/free/treeview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/free/wow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/datatables-select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/datatables-select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/datatables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/datatables2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/jquery.zmd.hierarchical-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/masonry.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/addons/rating.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/bs-custom-file-input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/chartjs-datalabels.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/enhanced-modals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/jquery.easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/velocity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/modal/src/js/vendor/free/waves.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/panel/gallery/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/gallery/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/notification/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/notification/modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -134,7 +279,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/modals" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -147,18 +292,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\company\public\modals" />
+      <recent name="C:\wamp64\www\company\public" />
+      <recent name="C:\wamp64\www\company\public\modal" />
+      <recent name="C:\wamp64\www\company\public\js" />
+      <recent name="C:\wamp64\www\company\public\build\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\company\resources\views\home" />
       <recent name="C:\wamp64\www\company\resources\views\panel" />
       <recent name="C:\wamp64\www\company\resources\views\home\auth" />
       <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\company\public" />
-      <recent name="C:\wamp64\www\company\public\modal" />
-      <recent name="C:\wamp64\www\company\public\js" />
-      <recent name="C:\wamp64\www\company\public\build\images" />
-      <recent name="C:\wamp64\www\company\public\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,6 +361,7 @@
       <workItem from="1597052490027" duration="9130000" />
       <workItem from="1597065115029" duration="6365000" />
       <workItem from="1597133680352" duration="13135000" />
+      <workItem from="1597220277733" duration="10633000" />
     </task>
     <servers />
   </component>
