@@ -27,6 +27,7 @@ Route::post('app/profile/update/{profile_id}', 'HomeController@update')->name('a
 //gallery
 Route::get('app/gallery', 'GalleryController@index')->name('upload.gallery.picture');
 Route::post('app/gallery', 'GalleryController@store')->name('upload.gallery.store');
+Route::get('app/gallery/show', 'GalleryController@show')->name('show.gallery.image');
 
 
 

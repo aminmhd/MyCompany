@@ -65,8 +65,6 @@
 <script src="{{ asset('vendors/fastclick/lib/fastclick.js') }}"></script>
 <!-- NProgress -->
 <script src="{{ asset('vendors/nprogress/nprogress.js') }}"></script>
-<!-- Chart.js -->
-<script src="{{ asset('vendors/Chart.js/dist/Chart.min.js') }}"></script>
 <!-- gauge.js -->
 <script src="{{ asset('vendors/gauge.js/dist/gauge.min.js') }}"></script>
 <!-- bootstrap-progressbar -->
@@ -95,7 +93,6 @@
 <script src="{{ asset('vendors/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 <!-- Custom Theme Scripts -->
-
 <script src="{{ asset('build/js/custom.min.js') }}"></script>
 <script src="{{ asset('js/sweetalert.js') }}"></script>
 @yield('footer')

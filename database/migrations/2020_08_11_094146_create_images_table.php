@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
           $table->string('image_name');
           $table->bigInteger('image_user_id');
           $table->string('image_type');
+          $table->string('image_text');
           $table->timestamps();
           $table->softDeletes('deleted_at');
 
