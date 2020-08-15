@@ -29,6 +29,8 @@ Route::get('app/gallery', 'GalleryController@index')->name('upload.gallery.pictu
 Route::post('app/gallery', 'GalleryController@store')->name('upload.gallery.store');
 Route::get('app/gallery/show', 'GalleryController@show')->name('show.gallery.image');
 Route::get('app/gallery/destroy/{image_id}', 'GalleryController@destroy')->name('app.gallery.delete');
+Route::get('app/gallery/edit/{image_id}', 'GalleryController@edit')->name('app.gallery.edit');
+Route::post('app/gallery/edit/{image_id}', 'GalleryController@update')->name('app.gallery.update');
 
 
 

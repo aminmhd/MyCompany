@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Edit;
 use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,6 +57,41 @@ class GalleryController extends Controller
                 return redirect()->Route('show.gallery.image')->with(['error' => 'your image not deleted successfully']);
             }
         }
+    }
+
+    public function edit($image_id)
+    {
+        return view('panel.gallery.edit');
+    }
+
+    public function update(Request $request ,$image_id)
+    {
+        $auth_find = Auth::user();
+        $edit_table = Edit::all()
+            ->where('edit_image_id', '=', $image_id)
+            ->pluck('edit_id')
+            ->toArray();
+
+
+
+
+
+
+
+        dd($edit_table);
+
+        $edit_request = [
+            'edit_user_id' => $auth_find->id,
+            'edit_image_id' => $image_id,
+            'edit_image_address' => $request->get('edit_address'),
+            'edit_image_phone' => $request->get('edit_phone'),
+            'edit_image_explain' => $request->get('edit_explain'),
+        ];
+        if ($edit_table &&   count($edit_table) > 0) {
+
+        }
+
+
     }
 
 

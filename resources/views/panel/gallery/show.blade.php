@@ -35,7 +35,7 @@
 
                         <div class="row">
                             @if($image_find && count($image_find)>0)
-                                @foreach($image_find as $images)
+                                @foreach($image_find as $item => $images)
                                     <div class="col-md-55">
                                         <div class="thumbnail">
                                             <div class="image view view-first">
@@ -45,7 +45,7 @@
                                                     {{-- <p>Your Text</p>--}}
                                                     <div class="tools tools-bottom">
                                                         {{--<a href="#"><i class="fa fa-link"></i></a>--}}
-                                                        <a href="#" class="sm_open" data-modal="exampleAdvanced"
+                                                        <a class="sm_open" data-modal="{{$item}}"
                                                            data-effect="pushup" data-icons="is_right"><i
                                                                 class="fa fa-pencil"></i></a>
                                                         <a href="{{ Route('app.gallery.delete' , [$images->image_id]) }}"><i
@@ -58,8 +58,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @include('panel.notification.modal' ,$images)
                                     {{--/////////////////////modal--}}
-                                    @include('panel.notification.modal',$images)
                                 @endforeach
                             @endif
                         </div>
