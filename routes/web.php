@@ -31,6 +31,8 @@ Route::get('app/gallery/show', 'GalleryController@show')->name('show.gallery.ima
 Route::get('app/gallery/destroy/{image_id}', 'GalleryController@destroy')->name('app.gallery.delete');
 Route::get('app/gallery/edit/{image_id}', 'GalleryController@edit')->name('app.gallery.edit');
 Route::post('app/gallery/edit/{image_id}', 'GalleryController@update')->name('app.gallery.update');
+Route::get('app/image/download/{image_id}', 'GalleryController@download')->name('app.image.download');
+
 
 
 

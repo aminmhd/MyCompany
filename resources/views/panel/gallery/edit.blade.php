@@ -24,7 +24,8 @@
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input id="blog_subject" name="edit_phone" type="text" class="form-control" value="">
+                                <input id="blog_subject" name="edit_phone" type="text" class="form-control"
+                                       value="{{ isset($image_edit) ? old('edit_phone' , $image_edit->edit_image_phone) : '' }}">
                             </div>
                         </div>
                         <div class="item form-group">
@@ -32,7 +33,8 @@
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input id="blog_subject" name="edit_image_text" type="text" class="form-control" value="">
+                                <input id="blog_subject" name="edit_image_text" type="text" class="form-control"
+                                       value="{{ isset($image_edit) ? old('edit_image_text' , $image_edit->edit_image_text) : '' }}">
                             </div>
                         </div>
                         <div class="item form-group">
@@ -43,7 +45,7 @@
                             <div class="col-md-6 col-sm-6 ">
                                 <label>
                                     <textarea name="edit_address" class="form-control" rows="3" cols="38"
-                                              placeholder="Address"></textarea>
+                                              placeholder="Address">{{ isset($image_edit) ? old('edit_address' , $image_edit->edit_image_address) : '' }}</textarea>
                                 </label>
                             </div>
                         </div>
@@ -55,7 +57,7 @@
                             <div class="col-md-6 col-sm-6 ">
                                 <label>
                                     <textarea name="edit_explain" class="form-control" rows="4" cols="33"
-                                              placeholder="Explain"></textarea>
+                                              placeholder="Explain">{{ isset($image_edit) ? old('edit_explain' , $image_edit->edit_image_explain) : '' }}</textarea>
                                 </label>
                             </div>
                         </div>

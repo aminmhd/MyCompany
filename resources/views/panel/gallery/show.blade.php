@@ -32,7 +32,6 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-
                         <div class="row">
                             @if($image_find && count($image_find)>0)
                                 @foreach($image_find as $item => $images)

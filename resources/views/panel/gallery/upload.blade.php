@@ -152,7 +152,7 @@
                                                 </div><!-- btn-orange -->
                                             </div><!-- col-3 -->
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="image_text[]"
+                                                <input type="text" class="form-control" required="required" name="image_text[]"
                                                        placeholder="Note">
                                             </div><!--col-8-->
                                             <div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a>
