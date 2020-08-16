@@ -28,6 +28,14 @@
                             </div>
                         </div>
                         <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="blog_subject">Text<span
+                                    class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input id="blog_subject" name="edit_image_text" type="text" class="form-control" value="">
+                            </div>
+                        </div>
+                        <div class="item form-group">
                             <label for="blog_Description"
                                    class="col-form-label col-md-3 col-sm-3 label-align">Address<span
                                     class="required">*</span>
@@ -56,7 +64,7 @@
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="file" class="" id="blog_img" name="blog_img" required="required">
+                                <input type="file" class="" id="blog_img" name="edit_img" required="required">
                             </div>
                         </div>
                         <div class="ln_solid"></div>

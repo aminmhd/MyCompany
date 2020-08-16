@@ -6,6 +6,7 @@ use App\Edit;
 use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class GalleryController extends Controller
@@ -64,31 +65,39 @@ class GalleryController extends Controller
         return view('panel.gallery.edit');
     }
 
-    public function update(Request $request ,$image_id)
+    public function update(Request $request, $image_id)
     {
         $auth_find = Auth::user();
-        $edit_table = Edit::all()
-            ->where('edit_image_id', '=', $image_id)
+        $image_table = Image::find($image_id);
+        $edit_table = $image_table
+            ->edits()
+            ->get()
             ->pluck('edit_id')
             ->toArray();
-
-
-
-
-
-
-
-        dd($edit_table);
-
         $edit_request = [
             'edit_user_id' => $auth_find->id,
             'edit_image_id' => $image_id,
             'edit_image_address' => $request->get('edit_address'),
             'edit_image_phone' => $request->get('edit_phone'),
             'edit_image_explain' => $request->get('edit_explain'),
+            'edit_image_text' => $request->get('edit_image_text'),
         ];
-        if ($edit_table &&   count($edit_table) > 0) {
-
+        if ($request->has('edit_img')){
+            $image_table->update([
+                'image_name' => $request->file('edit_img')->getClientOriginalName(),
+                'image_type' => $request->file('edit_img')->getMimeType(),
+                'image_text' => isset($edit_request['edit_image_text']) ? $edit_request['edit_image_text'] : $image_table->image_text ,
+            ]);
+        }
+        if ($edit_table && count($edit_table) == 1) {
+            $edit_update = Edit::find( intval($edit_table) );
+            $edit_update->update($edit_request);
+            return redirect()->Route('show.gallery.image')->with(['success' => 'your image successfully edited']);
+        } else {
+            $edit_create = Edit::create($edit_request);
+            if ($edit_create instanceof Edit) {
+                return redirect()->Route('show.gallery.image')->with(['success' => 'your image successfully edited']);
+            }
         }
 
 

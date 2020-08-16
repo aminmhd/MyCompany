@@ -17,9 +17,10 @@ class CreateEditsTable extends Migration
           $table->increments('edit_id');
           $table->bigInteger('edit_user_id');
           $table->bigInteger('edit_image_id');
-          $table->longText('edit_image_address');
-          $table->string('edit_image_phone');
-          $table->longText('edit_image_explain');
+          $table->longText('edit_image_address')->nullable();
+          $table->string('edit_image_phone')->nullable();
+          $table->longText('edit_image_explain')->nullable();
+          $table->string('edit_image_text')->nullable();
           $table->timestamps();
         });
     }
