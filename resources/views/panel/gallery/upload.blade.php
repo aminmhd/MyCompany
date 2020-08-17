@@ -127,7 +127,7 @@
                         <div class="row it">
                             <div class="col-sm-offset-1 col-sm-10" id="one" style="margin: 25px 50px 34px 80px">
                                 <p>
-                                    Please upload documents only in 'pdf', 'docx', 'rtf', 'jpg', 'jpeg', 'png' & 'text'
+                                    Please upload documents only in 'jpg', 'jpeg', 'png' & 'text'
                                     format.
                                 </p><br>
                                 <div class="row">

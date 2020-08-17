@@ -51,7 +51,6 @@ class GalleryController extends Controller
     public function show()
     {
         $image_find = Image::all();
-
         return view('panel.gallery.show', compact('image_find'));
     }
 
@@ -89,6 +88,10 @@ class GalleryController extends Controller
             ->get()
             ->pluck('edit_id')
             ->toArray();
+
+        $edit_table = $image_table->edits()->first()->pluck('edit_id');
+
+
         $edit_request = [
             'edit_user_id' => $auth_find->id,
             'edit_image_id' => $image_id,

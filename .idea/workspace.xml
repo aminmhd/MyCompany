@@ -4,11 +4,9 @@
     <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/gallery/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/gallery/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/panel/gallery/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/gallery/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/panel/gallery/upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/gallery/upload.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/panel/notification/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/notification/modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +132,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/modals" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -147,18 +145,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\company\resources\views\home" />
-      <recent name="C:\wamp64\www\company\resources\views\panel" />
-      <recent name="C:\wamp64\www\company\resources\views\home\auth" />
-      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\company\public\modals" />
       <recent name="C:\wamp64\www\company\public" />
       <recent name="C:\wamp64\www\company\public\modal" />
       <recent name="C:\wamp64\www\company\public\js" />
       <recent name="C:\wamp64\www\company\public\build\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\company\resources\views\home" />
+      <recent name="C:\wamp64\www\company\resources\views\panel" />
+      <recent name="C:\wamp64\www\company\resources\views\home\auth" />
+      <recent name="C:\wamp64\www\company\public\plugins\bootstrap-material-datetimepicker" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -218,7 +216,9 @@
       <workItem from="1597133680352" duration="13135000" />
       <workItem from="1597220277733" duration="13731000" />
       <workItem from="1597474764554" duration="12721000" />
-      <workItem from="1597567892058" duration="11103000" />
+      <workItem from="1597567892058" duration="15828000" />
+      <workItem from="1597654539300" duration="1877000" />
+      <workItem from="1597661388065" duration="3077000" />
     </task>
     <servers />
   </component>
