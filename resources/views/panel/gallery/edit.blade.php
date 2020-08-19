@@ -34,7 +34,7 @@
                             </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <input id="blog_subject" name="edit_image_text" type="text" class="form-control"
-                                       value="{{ isset($image_edit) ? old('edit_image_text' , $image_edit->edit_image_text) : '' }}">
+                                       value="{{ isset($image_find) ? old('edit_image_text' ,$image_find->image_text) : '' }}">
                             </div>
                         </div>
                         <div class="item form-group">

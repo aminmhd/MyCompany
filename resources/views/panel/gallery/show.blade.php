@@ -57,7 +57,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @include('panel.notification.modal' ,[$images])
+
+                                    @include('panel.notification.modal' ,$images)
                                     {{--/////////////////////modal--}}
                                 @endforeach
                             @endif

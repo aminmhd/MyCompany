@@ -21,10 +21,10 @@ class GalleryController extends Controller
         $auth_user_find = Auth::user();
         $images_text_info = $request->input('image_text');
         $images_info = $request->file('images');
-        $this->validate($request,[
+        $this->validate($request, [
             'images' => 'required',
             'image_text' => 'required',
-        ],[
+        ], [
             'images.required' => 'It is necessary to upload the Image',
             'image_text.required' => 'It is necessary to enter the Text'
         ]);
@@ -70,12 +70,13 @@ class GalleryController extends Controller
     public function edit($image_id)
     {
         $image_find = Image::find($image_id);
-        $edit_find = $image_find->edits()
+        $edit_find = $image_find->edit()
             ->get()
             ->pluck('edit_id')
             ->toArray();
         $image_edit = Edit::find(intval($edit_find));
-        return view('panel.gallery.edit', compact('image_edit'));
+
+        return view('panel.gallery.edit', compact('image_edit', 'image_find'));
 
     }
 
@@ -84,13 +85,10 @@ class GalleryController extends Controller
         $auth_find = Auth::user();
         $image_table = Image::find($image_id);
         $edit_table = $image_table
-            ->edits()
+            ->edit()
             ->get()
             ->pluck('edit_id')
             ->toArray();
-
-        $edit_table = $image_table->edits()->first()->pluck('edit_id');
-
 
         $edit_request = [
             'edit_user_id' => $auth_find->id,
@@ -110,7 +108,8 @@ class GalleryController extends Controller
                 'image_text' => isset($edit_request['edit_image_text']) ? $edit_request['edit_image_text'] : $image_table->image_text,
             ]);
         }
-        if ($edit_table && count($edit_table) == 1) {
+        /*  $image_table->image_id == Edit::find(intval($edit_table))->edit_image_id*/
+        if (isset(Edit::find(intval($edit_table))->edit_image_id) ? $image_id == Edit::find(intval($edit_table))->edit_image_id : false) {
             $edit_update = Edit::find(intval($edit_table));
             $edit_update->update($edit_request);
             return redirect()

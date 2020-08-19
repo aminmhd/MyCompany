@@ -12,9 +12,9 @@ class Image extends Model
     protected $primaryKey = 'image_id';
     protected $dates = ['deleted_at'];
 
-    public function edits()
+    public function edit()
     {
-        return $this->hasMany(Edit::class , 'edit_image_id');
+        return $this->hasOne(Edit::class , 'edit_image_id');
     }
 
 }

@@ -4,9 +4,9 @@
         <div class="sm_icon_menu">
             <ul>
                 <li class="sm_close"><i class="fa fa-times fa-fw "></i></li>
-                <li><a href="{{ Route('app.gallery.edit', [$images->image_id]) }}"><i class="fa fa-edit fa-fw"></i></a>
+                <li><a href="{{ Route('app.gallery.edit', $images->image_id) }}"><i class="fa fa-edit fa-fw"></i></a>
                 </li>
-                <li><a href="{{ Route('app.image.download' , [$images->image_id]) }}"><i
+                <li><a href="{{ Route('app.image.download' , $images->image_id) }}"><i
                             class="fa fa-download fa-fw"></i></a></li>
             </ul>
         </div>
@@ -16,19 +16,18 @@
             </div>
             <div class="sm_area_bottom">
                 <div style="font-size: 20px;font-weight: bold">
-
-
-                    @foreach($images->edits as $e)
-                        Address: {{   $e->edit_id  }}
-                    @endforeach
-
-
-                    <br>
-                    Phone
-                    Number:
-                    <br>
-                    Explain:
-                    <br>
+{{--
+                    @if(!empty($images->edit))
+                        @foreach($images->edit->get() as $e)
+                            Address: {{   $e->edit_image_address  }}
+                            <br>
+                            Phone
+                            Number:  {{   $e->edit_image_phone  }}
+                            <br>
+                            Explain:  {{   $e->edit_image_explain  }}
+                            <br>
+                        @endforeach
+                    @endif--}}
                 </div>
             </div>
             <div class="sm_close sm_close_button">CLOSE</div>
