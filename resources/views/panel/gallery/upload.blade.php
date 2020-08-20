@@ -147,7 +147,7 @@
                                                     <img src="https://image.flaticon.com/icons/svg/136/136549.svg"
                                                          class="icon">
                                                     <span class="upl" id="upload">Upload document</span>
-                                                    <input type="file" name="images[]" class="upload up" id="up"
+                                                    <input type="file" required="required" name="images[]" class="upload up" id="up"
                                                            onchange="readURL(this);"/>
                                                 </div><!-- btn-orange -->
                                             </div><!-- col-3 -->

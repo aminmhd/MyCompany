@@ -7,6 +7,7 @@ use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 
 class GalleryController extends Controller
@@ -21,6 +22,8 @@ class GalleryController extends Controller
         $auth_user_find = Auth::user();
         $images_text_info = $request->input('image_text');
         $images_info = $request->file('images');
+
+
         $this->validate($request, [
             'images' => 'required',
             'image_text' => 'required',
@@ -29,13 +32,13 @@ class GalleryController extends Controller
             'image_text.required' => 'It is necessary to enter the Text'
         ]);
         foreach ($images_info as $item => $images) {
+            $image_name = Str::random(5) . "-" . $images->getClientOriginalName();
             $image_create = Image::create([
-                'image_name' => $images->getClientOriginalName(),
+                'image_name' => $image_name,
                 'image_text' => $images_text_info[$item],
                 'image_type' => $images->getMimeType(),
                 'image_user_id' => $auth_user_find->id,
             ]);
-            $image_name = $images->getClientOriginalName();
             $public_path = public_path('images');
             $images->move($public_path, $image_name);
         }
@@ -72,8 +75,18 @@ class GalleryController extends Controller
         $image_find = Image::find($image_id);
         $edit_find = $image_find->edit()
             ->get()
-            ->pluck('edit_id')
-            ->toArray();
+            ->pluck('edit_id');
+
+
+
+        dd($edit_find[0]);
+
+
+
+        for ( $i=0 ;$i < count($edit_find) ; ){
+            $c = $edit_find[$i];
+        }
+
         $image_edit = Edit::find(intval($edit_find));
 
         return view('panel.gallery.edit', compact('image_edit', 'image_find'));
@@ -103,21 +116,27 @@ class GalleryController extends Controller
         /*////////////////////*/
         if ($request->has('edit_img')) {
             $image_table->update([
-                'image_name' => $request->file('edit_img')->getClientOriginalName(),
+                'image_name' => Str::random(5) . "-" . $request->file('edit_img')->getClientOriginalName(),
                 'image_type' => $request->file('edit_img')->getMimeType(),
                 'image_text' => isset($edit_request['edit_image_text']) ? $edit_request['edit_image_text'] : $image_table->image_text,
             ]);
         }
-        /*  $image_table->image_id == Edit::find(intval($edit_table))->edit_image_id*/
-        if (isset(Edit::find(intval($edit_table))->edit_image_id) ? $image_id == Edit::find(intval($edit_table))->edit_image_id : false) {
+
+        if (in_array($image_id, $edit_table)) {
             $edit_update = Edit::find(intval($edit_table));
             $edit_update->update($edit_request);
+            $public_path = public_path('images');
+            $request->file('edit_img')->move($public_path, $image_table->image_name);
+            dd(in_array($image_id, $edit_table));
             return redirect()
                 ->Route('show.gallery.image')
                 ->with(['success' => 'your image successfully edited']);
-        } else {
+        } elseif (!in_array($image_id, $edit_table)) {
             $edit_create = Edit::create($edit_request);
             if ($edit_create instanceof Edit) {
+                $public_path = public_path('images');
+                $request->file('edit_img')->move($public_path, $image_table->image_name);
+                dd(in_array($image_id, $edit_table));
                 return redirect()
                     ->Route('show.gallery.image')
                     ->with(['success' => 'your image successfully edited']);

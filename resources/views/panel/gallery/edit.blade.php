@@ -66,7 +66,7 @@
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="file" class="" id="blog_img" name="edit_img" required="required">
+                                <input type="file" class="" id="blog_img" name="edit_img">
                             </div>
                         </div>
                         <div class="ln_solid"></div>
