@@ -10,6 +10,7 @@ class Edit extends Model
     protected $primaryKey = 'edit_id';
     protected $guarded = ['edit_id'];
 
+
     public function image()
     {
         return $this->belongsTo(Image::class , 'edit_image_id');

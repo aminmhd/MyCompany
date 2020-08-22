@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Edit;
 use App\Image;
+use Composer\Util\NoProxyPattern;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -73,23 +74,16 @@ class GalleryController extends Controller
     public function edit($image_id)
     {
         $image_find = Image::find($image_id);
-        $edit_find = $image_find->edit()
-            ->get()
-            ->pluck('edit_id');
+        $edit_find = $image_find->edit();
 
 
-
-        dd($edit_find[0]);
-
-
-
-        for ( $i=0 ;$i < count($edit_find) ; ){
-            $c = $edit_find[$i];
+        if (count($edit_find->get()) == 0) {
+            $image_edit = null;
+        } else {
+            $image_edit = Edit::find($edit_find->first()->edit_id);
         }
-
-        $image_edit = Edit::find(intval($edit_find));
-
         return view('panel.gallery.edit', compact('image_edit', 'image_find'));
+
 
     }
 
@@ -97,11 +91,8 @@ class GalleryController extends Controller
     {
         $auth_find = Auth::user();
         $image_table = Image::find($image_id);
-        $edit_table = $image_table
-            ->edit()
-            ->get()
-            ->pluck('edit_id')
-            ->toArray();
+        $edit_table = Edit::where('edit_image_id', '=', $image_id);
+        /* dd(count($edit_table->get()));*/
 
         $edit_request = [
             'edit_user_id' => $auth_find->id,
@@ -120,23 +111,28 @@ class GalleryController extends Controller
                 'image_type' => $request->file('edit_img')->getMimeType(),
                 'image_text' => isset($edit_request['edit_image_text']) ? $edit_request['edit_image_text'] : $image_table->image_text,
             ]);
+        } elseif ($request->has('edit_image_text')){
+            $image_table->update([
+                'image_text' => $request->get('edit_image_text'),
+            ]);
         }
 
-        if (in_array($image_id, $edit_table)) {
-            $edit_update = Edit::find(intval($edit_table));
+        if (count($edit_table->get()) == 1) {
+            $edit_update = Edit::find($edit_table->first()->edit_id);
             $edit_update->update($edit_request);
-            $public_path = public_path('images');
-            $request->file('edit_img')->move($public_path, $image_table->image_name);
-            dd(in_array($image_id, $edit_table));
+            if ($request->has('edit_img')) {
+                $public_path = public_path('images');
+                $request->file('edit_img')->move($public_path, $image_table->image_name);
+            }
+
             return redirect()
                 ->Route('show.gallery.image')
                 ->with(['success' => 'your image successfully edited']);
-        } elseif (!in_array($image_id, $edit_table)) {
+        } else {
             $edit_create = Edit::create($edit_request);
             if ($edit_create instanceof Edit) {
                 $public_path = public_path('images');
                 $request->file('edit_img')->move($public_path, $image_table->image_name);
-                dd(in_array($image_id, $edit_table));
                 return redirect()
                     ->Route('show.gallery.image')
                     ->with(['success' => 'your image successfully edited']);
@@ -157,10 +153,8 @@ class GalleryController extends Controller
     {
         $this->validate($value, [
             'edit_image_text' => 'required',
-            'edit_img' => 'required',
         ], [
             'edit_image_text.required' => 'It is necessary to enter the Text',
-            'edit_img.required' => 'It is necessary to upload the Image',
         ]);
     }
 
