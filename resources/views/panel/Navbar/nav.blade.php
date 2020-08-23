@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="http://demo.gardiom.com/" class="site_title"><i class="fa fa-paw"></i> <span>Gardiom</span></a>
+            <a href="http://demo.gardiom.com/" class="site_title"><i class="fa fa-paw"></i> <span>Amlak</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -9,11 +9,11 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
-                <img src="{{ asset('build/images/amin.jpg') }}" alt="..." class="img-circle profile_img">
+                <img src="{{ asset('images/'.$profile_info->first()->profile_img) }}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Amin abarashi</h2>
+                <h2>{{ $profile_info->first()->profile_user_name }}</h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
@@ -42,12 +42,12 @@
                         </li>
 
 
-                        <li><a><i class="fa fa-cogs"></i> Setting <span class="fa fa-chevron-down"></span></a>
+                     {{--   <li><a><i class="fa fa-cogs"></i> Setting <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 <li><a href="#">Picture</a></li>
-                                {{-- <li><a href="#">Table</a></li>--}}
+                                --}}{{-- <li><a href="#">Table</a></li>--}}{{--
                             </ul>
-                        </li>
+                        </li>--}}
                     @endif
 
                         <li><a><i class="fa fa-photo"></i> Gallery <span class="fa fa-chevron-down"></span></a>

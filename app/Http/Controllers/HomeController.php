@@ -26,6 +26,7 @@ class HomeController extends Controller
             'password' => $request->get('user_password'),
         ];
         $login = Auth::attempt($auth_login);
+
         if ($login) {
             return redirect()->Route('app.index')->with(['success' => 'you are login successfully']);
         } else {
@@ -83,7 +84,7 @@ class HomeController extends Controller
         $user_message = $user_find_query->messages()->get();
         $profile_information_user = $query_table->where('profile_user_id', '=', $user_auth->id)->get();
         if ($user_find_query instanceof User) {
-            return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user', 'public_path' , 'user_message'));
+            return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user', 'public_path', 'user_message'));
         }
 
     }
@@ -101,7 +102,6 @@ class HomeController extends Controller
         /*//////////////////////////////*/
 
 
-
         $this->validate($request, [
             'profile_website' => 'required',
             'profile_description' => 'required',
@@ -116,11 +116,14 @@ class HomeController extends Controller
             'profile_user_id' => $auth_user_find->id,
             'profile_user_name' => $auth_user_find->name,
             'profile_description' => $request->get('profile_description'),
-            'profile_img' => $img_profile_name->getClientOriginalName(),
+            'profile_img' => Str::random(5) . "-" . $img_profile_name->getClientOriginalName(),
             'img_size' => $request->file('profile_img')->getSize(),
         ];
         if ($user_model_find instanceof User) {
             $create_edit = Profile::create($profile_information);
+            $destinationPath = public_path('images');
+            $img_profile_name->move($destinationPath, $profile_information['profile_img']);
+
             if ($create_edit) {
                 return redirect()->Route('app.home.profile')->with(['success' => 'your edit is successfully created']);
             } else {
@@ -156,11 +159,6 @@ class HomeController extends Controller
         ]);
         $profile_edit_img_name = $request->file('profile_img');
         /*///////////////////*/
-        $destinationPath = public_path('\images');
-        $thumb_img = Image::make($profile_edit_img_name->getRealPath())->resize(220, 220);
-        $thumb_img->save('c:\wamp64\www\company\public\images' . '\\' . $profile_edit_img_name->getClientOriginalName(), 80);
-        $profile_edit_img_name->move($destinationPath, $profile_edit_img_name->getClientOriginalName());
-
 
         // $crop_photo->move('images' , $profile_edit_img_name );
         $profile_update = Profile::find($profile_id);
@@ -168,10 +166,14 @@ class HomeController extends Controller
         $profile_update_information = [
             'profile_website' => $request->get('profile_website'),
             'profile_description' => isset($profile_description_about_me) ? $profile_description_about_me : '!!!sorry this field is empty!!!',
-            'profile_img' => $profile_edit_img_name->getClientOriginalName(),
+            'profile_img' => Str::random(5) . "-" . $profile_edit_img_name->getClientOriginalName(),
         ];
         if ($profile_update instanceof Profile) {
             $profile_update->update($profile_update_information);
+            if ($request->has('profile_img')){
+                $destinationPath = public_path('images');
+                $profile_edit_img_name->move($destinationPath, $profile_update_information['profile_img']);
+            }
 
             return redirect()->Route('app.home.profile')->with(['success' => 'this profile was successfully updated']);
         }

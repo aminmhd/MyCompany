@@ -14,7 +14,7 @@
                 <h3>User Profile</h3>
             </div>
 
-            <div class="title_right">
+       {{--     <div class="title_right">
                 <div class="col-md-5 col-sm-5  form-group pull-right top_search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
@@ -23,7 +23,7 @@
                     </span>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
 
         <div class="clearfix"></div>
@@ -50,15 +50,20 @@
                         </ul>
                         <div class="clearfix"></div>
                     </div>
+
                     <div class="x_content">
+
                         <div class="col-md-3 col-sm-3  profile_left">
+                            @if($profile_information_user && count($profile_information_user) > 0)
+
                             <div class="profile_img">
                                 <div id="crop-avatar">
                                     <!-- Current avatar -->
                                     {{--/////////////////////////////////////////////////////////////////////--}}
                                     {{-- {{ dd($profile_information_user) }}--}}
-                                    <img class="img-responsive avatar-view"
-                                         src=""
+
+                                    <img class="img-responsive avatar-view" style="height: 220px;width: 220px;"
+                                         src="{{ asset('images/'.$profile_information_user->first()->profile_img) }}"
                                          alt="Avatar"
                                          title="Change the avatar">
                                 </div>
@@ -68,10 +73,10 @@
                             <ul class="list-unstyled user_data">
                                 <li class="m-top-xs">
                                     <i class="fa fa-external-link user-profile-icon"></i>
-                                    <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
+                                    <a href="http://www.kimlabs.com/profile/" target="_blank">{{$profile_information_user->first()->profile_website }}</a>
                                 </li>
                             </ul>
-                            @if($profile_information_user && count($profile_information_user) > 0)
+
                                 <a href="{{ Route('app.home.update.profile' , $profile_information_user[0]->profile_id ) }}"
                                    class="btn btn-success"><i
                                         class="fa fa-edit m-right-xs"></i>Update Profile</a>
@@ -82,11 +87,11 @@
                                 <br/>
                         @endif
 
-                        <!-- start skills -->
+                      {{--  <!-- start skills -->
                             <h4>Skills</h4>
                             <ul class="list-unstyled user_data">
                                 <li>
-                                    {{--//////////////////////////////////////////////////////////////////////////////--}}
+                                    --}}{{--//////////////////////////////////////////////////////////////////////////////--}}{{--
                                     <p>Web Applications</p>
                                     <div class="progress progress_sm">
                                         <div class="progress-bar bg-green" role="progressbar"
@@ -115,7 +120,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <!-- end of skills -->
+                            <!-- end of skills -->--}}
 
                         </div>
                         <div class="col-md-9 col-sm-9 ">
@@ -224,10 +229,9 @@
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content3"
                                          aria-labelledby="profile-tab">
-                                        <p>xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
-                                            coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next
-                                            level wes anderson artisan four loko farm-to-table craft beer twee. Qui
-                                            photo booth letterpress, commodo enim craft beer mlkshk </p>
+                                        <p>
+                                        {{ $profile_information_user->first()->profile_description }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
