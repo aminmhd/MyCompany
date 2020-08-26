@@ -7,7 +7,7 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Blog<small>Create Blog</small></h2>
+                    <h2>Blog<small>{{ $title }}</small></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -41,7 +41,7 @@
                                     class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="file" class="" id="blog_img" name="blog_img" required="required">
+                                <input type="file" class="" id="blog_img" name="blog_img">
                             </div>
                         </div>
                         <div class="ln_solid"></div>

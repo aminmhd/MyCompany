@@ -7,22 +7,9 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>User<small>Create User</small></h2>
-                    {{-- <ul class="nav navbar-right panel_toolbox">
-                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                         </li>
-                         <li class="dropdown">
-                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                             <ul class="dropdown-menu" role="menu">
-                                 <li><a class="dropdown-item" href="#">Settings 1</a>
-                                 </li>
-                                 <li><a class="dropdown-item" href="#">Settings 2</a>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li><a class="close-link"><i class="fa fa-close"></i></a>
-                         </li>
-                     </ul>--}}
+                   {{-- {{ dd(session('title')) }}--}}
+                    <h2>User<small>{{ $title }}</small></h2>
+
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -64,9 +51,10 @@
                             <div class="col-md-6 col-sm-6 ">
                                 <select name="user_role" class="form-control">
                                     <option
-                                        value="1" {{ isset($user_edit) && $user_edit->role == 1 ? 'selected' : '' }}>Admin</option>
+
+                                        value="1" {{ isset($user_edit) && $user_edit->role == 'Admin' ? 'selected' : '' }}>Admin</option>
                                     <option
-                                        value="2" {{ isset($user_edit) && $user_edit->role == 2 ? 'selected' : '' }}>Operator</option>
+                                        value="2" {{ isset($user_edit) && $user_edit->role == 'Operator' ? 'selected' : '' }}>Operator</option>
                                 </select>
                             </div>
                         </div>

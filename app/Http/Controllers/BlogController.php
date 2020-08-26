@@ -12,7 +12,9 @@ class BlogController extends Controller
 {
     public function create()
     {
-        return view('panel.blog.create');
+        return view('panel.blog.create' , [
+            'title' => 'Create Blog'
+        ]);
     }
 
     public function store(Request $request)
@@ -68,9 +70,13 @@ class BlogController extends Controller
     {
         $blog_find_edit = Blog::find($blog_id);
         if ($blog_find_edit instanceof Blog) {
-            return view('panel.blog.create', compact('blog_find_edit'));
+            return view('panel.blog.create', compact('blog_find_edit') , [
+                'title' => 'Edit Blog'
+            ]);
         } else {
-            return view('panel.blog.table')->with(['error' => 'your blog not found']);
+            return view('panel.blog.table' , [
+                'title' => 'Edit Blog'
+            ])->with(['error' => 'your blog not found']);
         }
 
     }
@@ -79,13 +85,15 @@ class BlogController extends Controller
     {
         $this->validate($request, [
             'blog_subject' => 'required',
-            'blog_img' => 'required',
+
         ], [
             'blog_subject.required' => 'subject is required',
-            'blog_img.required' => 'upload image is required',
+
         ]);
-        $blog_img_name = Str::random(5) . "/" . $request->file('blog_img')->getClientOriginalName();
-        $request->file('blog_img')->move('images' , $blog_img_name);
+        if ($request->has('blog_img')) {
+            $blog_img_name = Str::random(5) . "/" . $request->file('blog_img')->getClientOriginalName();
+            $request->file('blog_img')->move('images', $blog_img_name);
+        }
         $blog_update = Blog::find($blog_id);
         $blog_description_information_update = $request->get('blog_description');
         $blog_edit = [
@@ -93,8 +101,11 @@ class BlogController extends Controller
             'blog_user_name' => $blog_update->blog_user_name,
             'blog_user_id' => $blog_update->blog_user_id,
             'blog_description' =>  isset($blog_description_information_update) ? $blog_description_information_update : '!!!sorry this field is empty!!!',
-            'blog_img' => $blog_img_name,
+            'blog_img' => isset($blog_img_name) ? $blog_img_name  : '',
         ];
+        if ($blog_edit['blog_img'] == ''){
+            unset($blog_edit['blog_img']);
+        }
         if ($blog_update instanceof Blog) {
             $blog_update->update($blog_edit);
             return redirect()->Route('app.blog.show')->with(['success' => 'this blog was successfully updated']);

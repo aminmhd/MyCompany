@@ -17,7 +17,12 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('panel.User.create');
+        return view('panel.User.create' , [
+            'title' => 'Create User'
+        ]);
+
+
+
     }
 
     public function store(Request $request)
@@ -31,7 +36,9 @@ class UserController extends Controller
         ];
         $created_table = User::create($create_user);
         if ($created_table instanceof User) {
-            return redirect()->Route('app.show.table')->with(['success' => 'The user was successfully created']);
+            return redirect()
+                ->Route('app.show.table')
+                ->with(['success' => 'The user was successfully created']);
         }
 
     }
@@ -66,7 +73,9 @@ class UserController extends Controller
         if ($user_find instanceof User) {
             $user_delete = $user_find->delete();
             if ($user_delete) {
-                return redirect()->Route('app.show.table')->with(['success' => 'The user was successfully deleted']);
+                return redirect()
+                    ->Route('app.show.table')
+                    ->with(['success' => 'The user was successfully deleted']);
             }
         } else {
             return redirect()->Route('app.show.table');
@@ -78,7 +87,10 @@ class UserController extends Controller
         if (ctype_digit($id)) {
             $user_edit = User::find($id);
             if ($user_edit instanceof User) {
-                return view('panel.user.create', compact('user_edit'));
+                return view('panel.user.create', compact('user_edit') , [
+                    'title' => 'Edit User'
+                ]);
+
             }
         }
 

@@ -3,52 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9a069504-cb94-468c-8ca3-568eaefe182d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/1lcRZ-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/4hbPZ-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/56Wxg-screenshout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/6Oos1-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Atjj1-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/DERJ4-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/FSKpc-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Gakx6-photo_2020-06-30_14-19-45 (2).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/GceQ6-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/I54dJ-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/JEBih-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/KRDty-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/MwTM4-screensho.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Noqab-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/QIAhW-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/QnS62-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Sswjn-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/T3dIG-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/V2CZc-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Yb82e-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Z00Gp-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/cbpWL-screenshout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/cha2q-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/d4fik-ösd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/euEnF-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/g1DWY-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/gRlri-photo_2020-06-30_14-19-45 (2).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/hMlul-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/jSx5E-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/lGmOi-photo_2020-06-30_14-30-24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/mYHej-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/nbjjO-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/novdK-photo_2020-06-30_14-19-45 (2).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/oi8pg-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/pO9Me-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/pl6Ps-ösd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/uoEvW-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/uotc3-amin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/wjw2v-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/ymJWa-1595235070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/Layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Navbar/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/Template/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/Template/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/User/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/User/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/blog/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/blog/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +225,10 @@
       <workItem from="1597836372338" duration="7513000" />
       <workItem from="1597918110980" duration="7956000" />
       <workItem from="1598083100266" duration="6830000" />
-      <workItem from="1598164839760" duration="4981000" />
+      <workItem from="1598164839760" duration="7852000" />
+      <workItem from="1598186720773" duration="2637000" />
+      <workItem from="1598259625549" duration="1027000" />
+      <workItem from="1598364635666" duration="2466000" />
     </task>
     <servers />
   </component>
