@@ -14,16 +14,16 @@
                 <h3>User Profile</h3>
             </div>
 
-       {{--     <div class="title_right">
-                <div class="col-md-5 col-sm-5  form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                    </div>
-                </div>
-            </div>--}}
+            {{--     <div class="title_right">
+                     <div class="col-md-5 col-sm-5  form-group pull-right top_search">
+                         <div class="input-group">
+                             <input type="text" class="form-control" placeholder="Search for...">
+                             <span class="input-group-btn">
+                           <button class="btn btn-secondary" type="button">Go!</button>
+                         </span>
+                         </div>
+                     </div>
+                 </div>--}}
         </div>
 
         <div class="clearfix"></div>
@@ -56,26 +56,27 @@
                         <div class="col-md-3 col-sm-3  profile_left">
                             @if($profile_information_user && count($profile_information_user) > 0)
 
-                            <div class="profile_img">
-                                <div id="crop-avatar">
-                                    <!-- Current avatar -->
-                                    {{--/////////////////////////////////////////////////////////////////////--}}
-                                    {{-- {{ dd($profile_information_user) }}--}}
+                                <div class="profile_img">
+                                    <div id="crop-avatar">
+                                        <!-- Current avatar -->
+                                        {{--/////////////////////////////////////////////////////////////////////--}}
+                                        {{-- {{ dd($profile_information_user) }}--}}
 
-                                    <img class="img-responsive avatar-view" style="height: 220px;width: 220px;"
-                                         src="{{ asset('images/'.$profile_information_user->first()->profile_img) }}"
-                                         alt="Avatar"
-                                         title="Change the avatar">
+                                        <img class="img-responsive avatar-view" style="height: 220px;width: 220px;"
+                                             src="{{ asset('images/'.$profile_information_user->first()->profile_img) }}"
+                                             alt="Avatar"
+                                             title="Change the avatar">
+                                    </div>
                                 </div>
-                            </div>
-                            <h3>{{ $user_find_query->name }}</h3>
+                                <h3>{{ $user_find_query->name }}</h3>
 
-                            <ul class="list-unstyled user_data">
-                                <li class="m-top-xs">
-                                    <i class="fa fa-external-link user-profile-icon"></i>
-                                    <a href="http://www.kimlabs.com/profile/" target="_blank">{{$profile_information_user->first()->profile_website }}</a>
-                                </li>
-                            </ul>
+                                <ul class="list-unstyled user_data">
+                                    <li class="m-top-xs">
+                                        <i class="fa fa-external-link user-profile-icon"></i>
+                                        <a href="http://www.kimlabs.com/profile/"
+                                           target="_blank">{{$profile_information_user->first()->profile_website }}</a>
+                                    </li>
+                                </ul>
 
                                 <a href="{{ Route('app.home.update.profile' , $profile_information_user[0]->profile_id ) }}"
                                    class="btn btn-success"><i
@@ -85,43 +86,7 @@
                                 <a href="{{ Route('app.home.edit.profile') }}" class="btn btn-success"><i
                                         class="fa fa-edit m-right-xs"></i>Edit Profile</a>
                                 <br/>
-                        @endif
-
-                      {{--  <!-- start skills -->
-                            <h4>Skills</h4>
-                            <ul class="list-unstyled user_data">
-                                <li>
-                                    --}}{{--//////////////////////////////////////////////////////////////////////////////--}}{{--
-                                    <p>Web Applications</p>
-                                    <div class="progress progress_sm">
-                                        <div class="progress-bar bg-green" role="progressbar"
-                                             data-transitiongoal="50"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p>Website Design</p>
-                                    <div class="progress progress_sm">
-                                        <div class="progress-bar bg-green" role="progressbar"
-                                             data-transitiongoal="70"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p>Automation & Testing</p>
-                                    <div class="progress progress_sm">
-                                        <div class="progress-bar bg-green" role="progressbar"
-                                             data-transitiongoal="30"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p>UI / UX</p>
-                                    <div class="progress progress_sm">
-                                        <div class="progress-bar bg-green" role="progressbar"
-                                             data-transitiongoal="50"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <!-- end of skills -->--}}
-
+                            @endif
                         </div>
                         <div class="col-md-9 col-sm-9 ">
                             <div class="" role="tabpanel" data-example-id="togglable-tabs">
@@ -230,7 +195,9 @@
                                     <div role="tabpanel" class="tab-pane fade" id="tab_content3"
                                          aria-labelledby="profile-tab">
                                         <p>
-                                        {{ $profile_information_user->first()->profile_description }}
+                                            @if (!count($profile_information_user) == 0)
+                                                {{ $profile_information_user->first()->profile_description }}
+                                            @endif
                                         </p>
                                     </div>
                                 </div>

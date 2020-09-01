@@ -31,17 +31,24 @@
 
 
 </head>
+
 @php
     $auth_find_profile = \Illuminate\Support\Facades\Auth::user();
 $profile_info = \App\Profile::where('profile_user_id' , '=' , $auth_find_profile->id)->get();
 @endphp
 
-
 <body class="nav-md">
 
 <div class="container body">
     <div class="main_container">
-    @include('panel.Template.index' , $profile_info)
+    @if( count($profile_info) == 0)
+        @php
+        unset($profile_info)
+        @endphp
+        @include('panel.Template.index')
+    @else
+        @include('panel.Template.index' , $profile_info)
+    @endif
     <!-- page content -->
         <div class="right_col" role="main">
             <!-- top tiles -->

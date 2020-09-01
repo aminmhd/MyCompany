@@ -9,11 +9,11 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
-                <img src="{{ asset('images/'.$profile_info->first()->profile_img) }}" alt="..." class="img-circle profile_img">
+                <img src="{{ isset($profile_info) ? asset('images/'.$profile_info->first()->profile_img)  : '#' }}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>{{ $profile_info->first()->profile_user_name }}</h2>
+                <h2>{{ isset($profile_info) ? $profile_info->first()->profile_user_name  : ''}}</h2>
             </div>
         </div>
         <!-- /menu profile quick info -->

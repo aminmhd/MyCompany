@@ -83,6 +83,7 @@ class HomeController extends Controller
         $public_path = public_path('\image');
         $user_message = $user_find_query->messages()->get();
         $profile_information_user = $query_table->where('profile_user_id', '=', $user_auth->id)->get();
+
         if ($user_find_query instanceof User) {
             return view('home.profile.index', compact('user_find_query', 'all_users', 'profile_information_user', 'public_path', 'user_message'));
         }

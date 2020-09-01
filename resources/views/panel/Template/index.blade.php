@@ -1,6 +1,11 @@
 {{--///////////////////////////////////////////////////////////////////////////////////////////Nav--}}
-@include('panel.Navbar.nav', $profile_info)
+@if( isset($profile_info) )
+    @include('panel.Navbar.nav', $profile_info)
+    @else
+    @include('panel.Navbar.nav')
+@endif
 <!-- top navigation -->
+
 <div class="top_nav">
     <div class="nav_menu">
         <div class="nav toggle">
@@ -11,8 +16,9 @@
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                        id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('images/'.$profile_info->first()->profile_img) }}"
-                             alt="">{{ $profile_info->first()->profile_user_name }}
+                        <img
+                            src="{{ isset($profile_info) ? asset('images/'.$profile_info->first()->profile_img) : '#' }}"
+                            alt="">{{ isset($profile_info) ? $profile_info->first()->profile_user_name : '' }}
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ Route('app.home.profile')}}"> Profile</a>
